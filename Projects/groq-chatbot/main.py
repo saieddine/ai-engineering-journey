@@ -1,5 +1,7 @@
 from groq import Groq
 from dotenv import load_dotenv
+from memory import MemoryManager
+
 import os
 import json
 
@@ -16,18 +18,18 @@ client = Groq(
 )
 
 # ==============================
-# Conversation memory
+# System Prompt
 # ==============================
-messages = [
-    {
-        "role": "system",
-        "content": (
-            "You are a helpful assistant. "
-            "You MUST remember information the user gives you during this conversation "
-            "and use it when answering later questions."
-        )
-    }
-]
+system_prompt = (
+    "You are a helpful assistant. "
+    "You MUST remember information the user gives you during this conversation "
+    "and use it when answering later questions."
+)
+
+# ==============================
+# Memory Manager
+# ==============================
+memory = MemoryManager(system_prompt)
 
 print("========================================")
 print(" Chatbot Started!")
@@ -39,44 +41,37 @@ print("========================================\n")
 # ==============================
 while True:
 
-    # --------------------------
-    # Get user input
-    # --------------------------
     user_input = input("You: ")
 
     if user_input.lower() == "exit":
+        memory.close()
         print("Goodbye!")
         break
 
     # --------------------------
-    # Save user message
+    # Save User Message
     # --------------------------
-    messages.append(
-        {
-            "role": "user",
-            "content": user_input
-        }
-    )
+    memory.add_message("user", user_input)
 
     # --------------------------
-    # Debug: Show memory
+    # Debug: Show Memory
     # --------------------------
     print("\n========== MEMORY ==========")
-    print(json.dumps(messages, indent=4))
+    print(json.dumps(memory.get_messages(), indent=4))
     print("============================\n")
 
     # --------------------------
-    # Send request to Groq
+    # Send Request to Groq
     # --------------------------
     response = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
-        messages=messages,
+        messages=memory.get_messages(),
         stream=True,
         temperature=0
     )
 
     # --------------------------
-    # Stream AI response
+    # Stream AI Response
     # --------------------------
     print("AI: ", end="", flush=True)
 
@@ -96,14 +91,9 @@ while True:
 
             full_response += piece
 
-    print("\n")
+    print()
 
     # --------------------------
-    # Save assistant response
+    # Save Assistant Message
     # --------------------------
-    messages.append(
-        {
-            "role": "assistant",
-            "content": full_response
-        }
-    )
+    memory.add_message("assistant", full_response)
