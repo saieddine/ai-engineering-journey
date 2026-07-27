@@ -1,13 +1,13 @@
 import sqlite3
 connection= sqlite3.connect('chatboot.db')
 cursor=connection.cursor()
-cursor.execute("""CREATE TABLE people (
+cursor.execute("""CREATE TABLE poeple (
 
     id INTEGER PRIMARY KEY AUTOINCREMENT,
 
-    first_name TEXT,
-
-    last_name TEXT
+    ID_number         INTEGER,
+    first_name text,
+    last_name text
 
 )""")
 connection.commit()

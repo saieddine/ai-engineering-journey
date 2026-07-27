@@ -59,3 +59,12 @@ Current features:
 Next milestone:
 
 - Persistent memory with SQLite
+{Never let one component know more than it needs to know.
+
+Groq doesn't care about SQLite.
+
+SQLite doesn't care about Groq.
+
+MemoryManager becomes the bridge between them.
+
+This is called low coupling.}
