@@ -1,70 +1,146 @@
-# ai-engineering-journey
 # AI Engineering Journey
 
-I am a Computer Science student learning AI Engineering,
-RAG systems, conversation memory, and intelligent assistants.
+## About This Repository
 
-## Current Goal
+Welcome to my AI Engineering Journey.
 
-Build an AI Academic Assistant for university students.
+This repository documents my goal of becoming a professional AI Engineer by building real-world projects, studying modern AI systems, and applying software engineering best practices.
 
-## Roadmap
+Rather than only learning theory, I am building complete AI applications from the ground up while documenting every important lesson, architectural decision, and milestone throughout the journey.
 
-- [x] LLM Basics
-- [x] Tokens
-- [] Embeddings
-- [ ] Conversation Memory
-- [ ] Vector Databases
-- [ ] RAG Systems
-- [ ] Agents
-- [ ] Production Deployment
-## About this Repository
+My main long-term project is the **NPU Academic Assistant**, an AI-powered educational platform designed to help university students learn more effectively using Retrieval-Augmented Generation (RAG), personalized memory, and intelligent tutoring.
 
-This repository documents my complete AI Engineering journey.
+---
 
-Instead of only publishing finished projects, I also document my weekly progress, learning notes, experiments, and engineering decisions. The goal is to show not only what I built, but also how I learned to build it.
-## Repository Structure
+# Current Main Project
 
-```text
-Projects/
-    groq-chatbot/              # AI chatbot project
+## NPU Academic Assistant
 
-LearningJournal/
-    learning_journal.md        # Daily engineering log
+An AI-powered academic assistant designed to provide personalized learning support for university students.
 
-week1/
-week2/
-week3/
-week4/                         # Weekly lessons and exercises
+### Planned Features
 
-Notes/                         # PDF notes and summaries
-Resources/                     # Books, links, cheat sheets
-Portfolio/                     # Portfolio material
-Exercises/                     # Additional coding exercises
-Practice/                      # Sandbox experiments
-Screenshots/                   # Images for documentation
+- 📚 Course-specific AI mentors
+- 🧠 Long-term student memory
+- 📄 PDF and lecture processing
+- 🔍 Semantic search using RAG
+- 🤖 Personalized AI tutoring
+- 📈 Progress tracking
+- 🎯 Exam preparation mode
+- 💡 Learning recommendations
+- 🎥 YouTube and Bilibili learning resources
+- 🔥 Daily motivation system
+
+---
+
+# Current Progress
+
+## ✅ Completed
+
+### AI Fundamentals
+- Large Language Models (LLMs)
+- Prompt Engineering
+- Tokens & Context Windows
+- AI Memory Systems
+- SQLite Databases
+
+### RAG Fundamentals
+- RAG Architecture
+- Document Processing
+- Metadata
+- Retrieval Concepts
+
+### Document Ingestion Pipeline
+- PDF Reader
+- Text Cleaner
+- Chunker
+
+---
+
+## 🚧 Currently Learning
+
+- Embeddings
+- Vector Databases
+- Semantic Search
+- Retrieval Systems
+
+---
+
+# Repository Structure
+
 ```
-##  Current Project
+AI-Engineering-Journey/
 
-### Groq Chatbot
+├── Projects/
+│
+├── Roadmap/
+│
+├── Documentation/
+│
+├── Learning-Journal/
+│
+├── Practice/
+│
+├── Resources/
+│
+├── Ideas/
+│
+└── Milestones/
+```
 
-Current features:
+---
 
-- Streaming responses
-- Conversation memory
-- Modular architecture
-- Environment variable configuration
-- Prompt management
+# Technologies
 
-Next milestone:
+Current Technologies
 
-- Persistent memory with SQLite
-{Never let one component know more than it needs to know.
+- Python
+- SQLite
+- Git
+- GitHub
+- PyMuPDF
+- Groq API
 
-Groq doesn't care about SQLite.
+Future Technologies
 
-SQLite doesn't care about Groq.
+- FastAPI
+- FAISS
+- ChromaDB
+- Docker
+- LangChain
+- Hugging Face
+- Ollama
+- PostgreSQL
 
-MemoryManager becomes the bridge between them.
+---
 
-This is called low coupling.}
+# Learning Philosophy
+
+I believe the best way to learn AI is by building complete systems rather than isolated examples.
+
+For every topic I study, I aim to:
+
+- Understand the theory.
+- Build a working implementation.
+- Document what I learned.
+- Record design decisions.
+- Reflect on mistakes.
+- Continuously improve the system.
+
+---
+
+# Long-Term Goal
+
+My goal is to become a highly skilled AI Engineer capable of designing and building production-ready AI systems.
+
+This repository represents that journey, one milestone at a time.
+
+---
+
+# Progress
+
+Current Stage:
+
+**Building the NPU Academic Assistant using Retrieval-Augmented Generation (RAG).**
+
+More milestones will be added as the project evolves.

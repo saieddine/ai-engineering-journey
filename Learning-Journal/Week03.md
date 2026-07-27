@@ -1,6 +1,6 @@
 Learning Journal — Week 2
 
-Date: (Fill in the date)
+Date: 27/07/2026
 
 Week 2 — From Learning AI to Designing AI Systems
 
